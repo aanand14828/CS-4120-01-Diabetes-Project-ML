@@ -68,4 +68,4 @@ plt.tight_layout()
 plt.savefig("notebooks/figures/residuals_plot.png")
 plt.close()
 
-print("✅ All 4 plots saved in notebooks/figures/")
+print("All 4 plots saved in notebooks/figures/")

@@ -1,4 +1,4 @@
-# Generates the following plots: target distribution, correlation heatmap, confusion matrix, and residuals plot.
+# This file generates the following plots: target distribution, correlation heatmap, confusion matrix, and residuals plot.
 
 import os
 import pandas as pd
@@ -9,7 +9,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
-# --- Load dataset ---
 diabetes = load_diabetes(as_frame=True)
 df = diabetes.frame.copy()
 df["target"] = diabetes.target
@@ -43,7 +42,7 @@ plt.tight_layout()
 plt.savefig("notebooks/figures/correlation_heatmap.png")
 plt.close()
 
-# Confusion matrix (simple classification model) plot
+# Confusion matrix plot
 X = df.drop(columns=["target", "label"])
 y = df["label"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -58,7 +57,7 @@ plt.tight_layout()
 plt.savefig("notebooks/figures/confusion_matrix.png")
 plt.close()
 
-# Residuals plot (simple regression model)
+# Residuals plot
 y = df["target"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 reg = LinearRegression()

@@ -16,7 +16,7 @@ X = df.drop(columns=["target", "label"])
 y_reg = df["target"]
 y_clf = df["label"]
 
-# We use (70% / 15% / 15%) Train–Validation–Test Split 
+# We use (70% / 15% / 15%) Train Validation Test Split 
 
 X_train, X_temp, y_train_reg, y_temp_reg = train_test_split(X, y_reg, test_size=0.3, random_state=42)
 X_val, X_test, y_val_reg, y_test_reg = train_test_split(X_temp, y_temp_reg, test_size=0.5, random_state=42)

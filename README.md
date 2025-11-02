@@ -1,6 +1,5 @@
 # CS-4120-01-Diabetes-Project-ML
-Machine Learning Project: Diabetes Dataset (Classification + Regression)
-
+Set up and running instructions
 This project involves predicting diabetes disease progression using the Diabetes Dataset available in scikit-learn. datasets. Our goal was to build simple baseline models for both regression and classification before moving toward more complex neural network models.
 
 To run the project, first clone the repository and open the folder in your IDE or terminal. Install all required packages by running pip install -r requirements.txt. You don’t need to download any dataset manually — it’s automatically loaded through src/data.py.

@@ -3,7 +3,7 @@ Set up and running instructions
 
 This project involves predicting diabetes disease progression using the Diabetes Dataset available in scikit-learn. datasets. Our goal was to build simple baseline models for both regression and classification before moving toward more complex neural network models.
 
-To run the project, first clone the repository and open the folder in your IDE or terminal. Install all required packages by running pip install -r requirements.txt. You don’t need to download any dataset manually — it’s automatically loaded through src/data.py.
+To run the project, first clone the repository and open the folder in your choice of IDE or terminal. Install all required packages by running pip install -r requirements.txt. You don’t need to download any dataset manually — it’s automatically loaded through src/data.py.
 
 Once everything is set up, you can train the baseline models by running python src/train_baselines.py. This will train both Linear Regression and Decision Tree Regressor for the regression task, as well as Logistic Regression and Decision Tree Classifier for the classification task. The results will be saved as CSV tables under src/notebooks/tables/.
 

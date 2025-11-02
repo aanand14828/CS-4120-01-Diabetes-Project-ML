@@ -7,9 +7,7 @@ from sklearn.metrics import mean_squared_error, accuracy_score
 
 from data import load_diabetes_df, add_class_label
 
-# ------------------------------------------------------------
-# 1. Load Data
-# ------------------------------------------------------------
+# Data loading
 df = load_diabetes_df()
 df, median_y = add_class_label(df)
 
@@ -18,9 +16,8 @@ X = df.drop(columns=["target", "label"])
 y_reg = df["target"]
 y_clf = df["label"]
 
-# ------------------------------------------------------------
-# 2. Train–Validation–Test Split (70% / 15% / 15%)
-# ------------------------------------------------------------
+# We use (70% / 15% / 15%) Train–Validation–Test Split 
+
 X_train, X_temp, y_train_reg, y_temp_reg = train_test_split(X, y_reg, test_size=0.3, random_state=42)
 X_val, X_test, y_val_reg, y_test_reg = train_test_split(X_temp, y_temp_reg, test_size=0.5, random_state=42)
 
@@ -30,9 +27,8 @@ _, _, y_val_clf, y_test_clf = train_test_split(X_temp, y_temp_clf, test_size=0.5
 
 print(f"Train size: {len(X_train)} | Val size: {len(X_val)} | Test size: {len(X_test)}")
 
-# ------------------------------------------------------------
-# 3. Regression Models
-# ------------------------------------------------------------
+## Regression Models
+
 regression_results = []
 
 # Linear Regression
@@ -57,9 +53,7 @@ regression_results.append(["Decision Tree Regressor", mse_val_tr, mse_test_tr])
 reg_df = pd.DataFrame(regression_results, columns=["Model", "Val MSE", "Test MSE"])
 reg_df.to_csv("notebooks/tables/regression_results.csv", index=False)
 
-# ------------------------------------------------------------
-# 4. Classification Models
-# ------------------------------------------------------------
+## Classification Models
 classification_results = []
 
 # Logistic Regression
@@ -80,17 +74,9 @@ acc_val_tr = accuracy_score(y_val_clf, y_pred_val)
 acc_test_tr = accuracy_score(y_test_clf, y_pred_test)
 classification_results.append(["Decision Tree Classifier", acc_val_tr, acc_test_tr])
 
-# Save classification results
+# Classification Results
 clf_df = pd.DataFrame(classification_results, columns=["Model", "Val Accuracy", "Test Accuracy"])
 clf_df.to_csv("notebooks/tables/classification_results.csv", index=False)
 
-# ------------------------------------------------------------
-# 5. Print Summary
-# ------------------------------------------------------------
-print("\n--- Regression Results ---")
-print(reg_df)
+print("All results saved to notebooks/tables/.")
 
-print("\n--- Classification Results ---")
-print(clf_df)
-
-print("\nRegression and Classification Baseline Models Trained Successfully!")

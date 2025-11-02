@@ -1,15 +1,15 @@
 # CS-4120-01-Diabetes-Project-ML
 Set up and running instructions
 
-This project involves predicting diabetes disease progression using the Diabetes Dataset available in scikit-learn. datasets. Our goal was to build simple baseline models for both regression and classification before moving toward more complex neural network models.
+This project predicts diabetes disease progression using the Diabetes Dataset, which is publicly available in scikit-learn. datasets. We have built simple baseline models for both regression and classification in this project.
 
-To run the project, first clone the repository and open the folder in your choice of IDE or terminal. Install all required packages by running pip install -r requirements.txt. You don’t need to download any dataset manually — it’s automatically loaded through src/data.py.
+To run the project, first clone our repository and open the folder in an appropriate IDE/terminal. Install all required packages, which are specified with the versions we used in requirements.txt. You don’t need to download the dataset manually; it loads automatically through src/data.py.
 
-Once everything is set up, you can train the baseline models by running python src/train_baselines.py. This will train both Linear Regression and Decision Tree Regressor for the regression task, as well as Logistic Regression and Decision Tree Classifier for the classification task. The results will be saved as CSV tables under src/notebooks/tables/.
+After loading the data, you can train our baseline models by running python src/train_baselines.py. This will train both Linear Regression and Decision Tree Regressor for the regression task, as well as Logistic Regression and Decision Tree Classifier for the classification task. The results will be saved in the form of CSV tables under src/notebooks/tables/.
 
-If you’d like to generate visualizations such as the correlation heatmap, confusion matrix, residual plots, and target distribution, run python src/viz.py. The plots will be stored in src/notebooks/figures/.
+If you want to generate visualization plots, which are the correlation heatmap, confusion matrix, residual plots, and target distribution, run python src/evaluationplots.py. The plots will then generate and stored automatically in src/notebooks/figures/.
 
-The best-performing baseline models were Linear Regression for regression and Logistic Regression for classification. Both achieved stable validation and test performance, showing that the dataset is mostly linear and well-behaved. These models serve as a strong starting point for the upcoming neural network phase, where we plan to experiment with deeper architectures and optimizers like Adam to improve performance further.
+Our best models for predicting numerical values were Linear Regression, and for classifying data, we used Logistic Regression. Both models showed consistent results during testing, suggesting that the data is mostly linear and well-structured. These models provide a strong starting point before we move on to testing deeper neural network designs and using optimizers like Adam to improve performance.
 
 Quick Results Summary
 - Linear Regression performed best for regression (lowest MSE).
@@ -17,9 +17,9 @@ Quick Results Summary
 - Residuals showed a roughly normal distribution, indicating a stable model fit.
 - The dataset was balanced, and both models generalized reasonably well.
 
-Some Important Points
-- Random seeds are fixed (random_state=42) for reproducibility.
+Some Important Points to Note
+- Random seeds are fixed throughout (random_state=42) for reproducibility.
 - No raw data is committed — the dataset loads automatically from scikit-learn.
 - The project structure is organized to be compatible with MLflow for later logging, though tracking is not yet active in this phase.
 
-We used ChatGPT & Gemini for code review and formatting guidance for the plots.
+We used ChatGPT & Gemini Pro for code review and formatting guidance for the plots, specifically for implementing the color scheme. Program structures are inspired by all the Lecture Codes uploaded on Moodle.
